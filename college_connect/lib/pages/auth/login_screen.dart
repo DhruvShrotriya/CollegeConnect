@@ -1,3 +1,4 @@
+import 'package:college_connect/widgets/round_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,6 +9,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final emailControler = TextEditingController();
+  final passwordControler = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailControler.dispose();
+    passwordControler.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +27,31 @@ class _LoginScreenState extends State<LoginScreen> {
         automaticallyImplyLeading: false,
         title: Text("Login"),
       ),
-      body: Column(children: [Text(" Login PAge")]),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(" Login PAge"),
+              TextFormField(
+                controller: emailControler,
+                decoration: const InputDecoration(
+                    hintText: 'Email', prefixIcon: Icon(Icons.email_rounded)),
+              ),
+              TextFormField(
+                obscureText: true,
+                controller: passwordControler,
+                decoration: const InputDecoration(
+                    hintText: 'Email',
+                    prefixIcon: Icon(Icons.password_rounded)),
+              ),
+              RoundButton(
+                title: "Login",
+                onTap: () {},
+              )
+            ]),
+      ),
     );
   }
 }

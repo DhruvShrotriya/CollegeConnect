@@ -9,6 +9,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
   final emailControler = TextEditingController();
   final passwordControler = TextEditingController();
 
@@ -25,32 +26,69 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Login"),
+        title: const Text("Login"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(" Login PAge"),
-              TextFormField(
-                controller: emailControler,
-                decoration: const InputDecoration(
-                    hintText: 'Email', prefixIcon: Icon(Icons.email_rounded)),
-              ),
-              TextFormField(
-                obscureText: true,
-                controller: passwordControler,
-                decoration: const InputDecoration(
-                    hintText: 'Email',
-                    prefixIcon: Icon(Icons.password_rounded)),
-              ),
-              RoundButton(
-                title: "Login",
-                onTap: () {},
-              )
-            ]),
+        child: SingleChildScrollView(
+          child: Column(children: [
+            Image.asset(
+              "assets/images/LoginImg.png",
+              fit: BoxFit.fill,
+            ),
+            SizedBox(
+              height: 65,
+            ),
+            Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailControler,
+                      decoration: const InputDecoration(
+                          hintText: 'Email',
+                          prefixIcon: Icon(Icons.email_rounded)),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Email can't be emty";
+                        }
+
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      controller: passwordControler,
+                      decoration: const InputDecoration(
+                          hintText: 'Password',
+                          prefixIcon: Icon(Icons.password_rounded)),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Password can't be emty";
+                        } else if (value.length < 6) {
+                          return "Password should have atleast 6 characters ";
+                        }
+
+                        return null;
+                      },
+                    ),
+                  ],
+                )),
+            SizedBox(
+              height: 35,
+            ),
+            RoundButton(
+              title: "Login",
+              onTap: () {
+                if (_formKey.currentState!.validate()) {}
+              },
+            )
+          ]),
+        ),
       ),
     );
   }

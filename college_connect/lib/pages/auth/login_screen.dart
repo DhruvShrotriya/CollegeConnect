@@ -1,8 +1,10 @@
 import 'package:college_connect/pages/auth/sign_up.dart';
+import 'package:college_connect/pages/post/posr_screen.dart';
+import 'package:college_connect/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../../widgets/round_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,9 +14,38 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool loading = false;
   final _formKey = GlobalKey<FormState>();
   final emailControler = TextEditingController();
   final passwordControler = TextEditingController();
+  final _auth = FirebaseAuth.instance;
+
+  get error => null;
+
+  void login() {
+    setState(() {
+      loading = true;
+    });
+    _auth
+        .signInWithEmailAndPassword(
+            email: emailControler.text.toString(),
+            password: passwordControler.text.toString())
+        .then((value) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => PostScreen()));
+      Utils().tostMessage(value.user!.email.toString());
+      setState(() {
+        loading = false;
+      });
+    }).onError((error, stackTrace) {
+      Utils().tostMessage(error.toString());
+      debugPrint(error.toString());
+      setState(() {
+        loading = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -82,9 +113,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 40,
               ),
               RoundButton(
-                title: "Signup",
+                title: "Login",
+                loading: loading,
                 onTap: () {
-                  if (_formKey.currentState!.validate()) {}
+                  if (_formKey.currentState!.validate()) {
+                    login();
+                  }
                 },
               ),
               SizedBox(
@@ -104,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           MaterialPageRoute(
                               builder: (context) => SignUpScreen()));
                     },
-                    child: Text("SignUp"),
+                    child: Text("Signup"),
                   )
                 ],
               )

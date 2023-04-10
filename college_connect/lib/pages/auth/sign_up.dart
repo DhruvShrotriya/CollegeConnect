@@ -1,6 +1,8 @@
+import 'package:college_connect/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/round_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -10,9 +12,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  bool loading = false;
   final _formKey = GlobalKey<FormState>();
   final emailControler = TextEditingController();
   final passwordControler = TextEditingController();
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,11 +81,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             RoundButton(
               title: "Signup",
+              loading: loading,
               onTap: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  setState(() {
+                    loading = true;
+                  });
+                  _auth
+                      .createUserWithEmailAndPassword(
+                          email: emailControler.text.toString(),
+                          password: passwordControler.text.toString())
+                      .then((value) {
+                    setState(() {
+                      loading = false;
+                    });
+                  }).onError((error, stackTrace) {
+                    Utils().tostMessage(error.toString());
+                    setState(() {
+                      loading = false;
+                    });
+                  });
+                }
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
           ]),

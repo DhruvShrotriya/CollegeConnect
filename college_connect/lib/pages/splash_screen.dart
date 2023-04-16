@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     SpalashServices splashService = SpalashServices();
-    // TODO: implement initState
+
     super.initState();
     splashService.islogin(context);
   }
@@ -21,15 +21,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         title: Text("Login"),
         automaticallyImplyLeading: false,
       ),
       body: Center(
-        child: Text(
-          "College Connect",
-          style: TextStyle(fontSize: 30),
+        child: Image.asset(
+          "/assets/images/splash_screen_img.png ",
+          fit: BoxFit.fill,
         ),
+        // child: Text(
+        //"College Connect",
+        //style: TextStyle(fontSize: 30),
       ),
     );
   }

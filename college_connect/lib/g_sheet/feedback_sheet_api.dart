@@ -37,4 +37,14 @@ class FeedbackSheetApi {
       return spreadsheet.worksheetByTitle(title)!;
     }
   }
+
+  static Future insert(List<Map<String, dynamic>> rowList) async {
+    _userSheet!.values.map.appendRows(rowList);
+  }
+
+  static Future<int> getRowCount() async {
+    if (_userSheet == null) return 0;
+    final lastrow = await _userSheet!.values.lastRow();
+    return lastrow == null ? 0 : int.tryParse(lastrow.first) ?? 0;
+  }
 }

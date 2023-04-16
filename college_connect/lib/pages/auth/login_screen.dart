@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return true;
       },
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text("Login"),
         ),

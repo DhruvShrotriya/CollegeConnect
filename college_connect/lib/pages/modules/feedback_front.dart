@@ -1,3 +1,5 @@
+import 'package:college_connect/g_sheet/feedback_back.dart';
+import 'package:college_connect/g_sheet/feedback_sheet_api.dart';
 import 'package:college_connect/widgets/round_button.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +54,20 @@ class _FeedbackFrontState extends State<FeedbackFront> {
                 SizedBox(
                   height: 30,
                 ),
-                RoundButton(title: "Submit feedback", onTap: () {})
+                RoundButton(
+                  title: "Submit feedback",
+                  onTap: () async {
+                    final sr = await FeedbackSheetApi.getRowCount() + 1;
+                    final finalfeed = {
+                      FeedbackFeild.SR: sr,
+                      FeedbackFeild.name: nameController.text.toString(),
+                      FeedbackFeild.date: DateTime.now().toString(),
+                      FeedbackFeild.feedback: nameController.text.toString()
+                    };
+
+                    await FeedbackSheetApi.insert([finalfeed]);
+                  },
+                )
               ],
             ),
           )),

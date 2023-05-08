@@ -1,5 +1,6 @@
 import 'package:college_connect/pages/auth/sign_up.dart';
-import 'package:college_connect/pages/post/posr_screen.dart';
+import 'package:college_connect/pages/faculty_details.dart';
+import 'package:college_connect/pages/post/home.dart';
 import 'package:college_connect/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -32,7 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
             password: passwordControler.text.toString())
         .then((value) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => PostScreen()));
+          //context, MaterialPageRoute(builder: (context) => PostScreen()));
+          context,
+          MaterialPageRoute(builder: (context) => FacultyDetails()));
       Utils().tostMessage(value.user!.email.toString());
       setState(() {
         loading = false;

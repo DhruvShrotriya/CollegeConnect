@@ -28,12 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       body: Center(
         child: Image.asset(
-          "/assets/images/splash_screen_img.png ",
+          "assets/images/trans_ss_img.png",
           fit: BoxFit.fill,
         ),
-        // child: Text(
-        //"College Connect",
-        //style: TextStyle(fontSize: 30),
       ),
     );
   }

@@ -1,7 +1,9 @@
 import 'package:college_connect/g_sheet/feedback_sheet_api.dart';
 import 'package:college_connect/pages/faculty_details.dart';
 import 'package:college_connect/pages/modules/feedback_front.dart';
+import 'package:college_connect/pages/modules/maps.dart';
 import 'package:college_connect/pages/splash_screen.dart';
+import 'package:college_connect/pyp_1.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -25,8 +27,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
         ),
-        //  home: SplashScreen()
-        home: FacultyDetails());
+        //home: SplashScreen()
+        home: PYP_1());
     //home: FeedbackFront());
   }
 }

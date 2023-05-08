@@ -18,13 +18,13 @@ class FacultyOverview extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Colors.deepPurple,
-          Colors.deepPurpleAccent,
-          Color.fromRGBO(140, 64, 206, 0.992),
-          Color.fromRGBO(166, 96, 216, 0.992),
-        ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+        // decoration: const BoxDecoration(
+        //     gradient: LinearGradient(colors: [
+        //   Colors.deepPurple,
+        //   Colors.deepPurpleAccent,
+        //   Color.fromRGBO(140, 64, 206, 0.992),
+        //   Color.fromRGBO(166, 96, 216, 0.992),
+        // ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

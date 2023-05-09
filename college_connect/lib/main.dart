@@ -4,6 +4,10 @@ import 'package:college_connect/pages/modules/feedback_front.dart';
 import 'package:college_connect/pages/modules/maps.dart';
 import 'package:college_connect/pages/splash_screen.dart';
 import 'package:college_connect/pyp_1.dart';
+import 'package:college_connect/pyp_2.dart';
+import 'package:college_connect/pyp_3.dart';
+import 'package:college_connect/pyp_4.dart';
+import 'package:college_connect/pyp_home.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
         ),
         //home: SplashScreen()
-        home: PYP_1());
+        home: PYP());
     //home: FeedbackFront());
   }
 }

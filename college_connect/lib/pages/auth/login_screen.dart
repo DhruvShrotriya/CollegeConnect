@@ -1,3 +1,4 @@
+import 'package:college_connect/home.dart';
 import 'package:college_connect/pages/auth/sign_up.dart';
 import 'package:college_connect/pages/faculty_details.dart';
 import 'package:college_connect/pages/post/home.dart';
@@ -35,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.push(
           //context, MaterialPageRoute(builder: (context) => PostScreen()));
           context,
-          MaterialPageRoute(builder: (context) => FacultyDetails()));
+          MaterialPageRoute(builder: (context) => Home()));
       Utils().tostMessage(value.user!.email.toString());
       setState(() {
         loading = false;

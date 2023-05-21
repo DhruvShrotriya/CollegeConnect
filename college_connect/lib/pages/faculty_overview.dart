@@ -9,7 +9,6 @@ class FacultyOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
@@ -44,9 +43,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Designation :   ${fdata["designation"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -54,9 +53,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Department :   ${fdata["Department"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 35,
@@ -64,10 +63,10 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "General Information",
                 style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Color.fromARGB(255, 177, 174, 174)),
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -75,9 +74,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Phone Number  :   ${fdata["phno"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -85,9 +84,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Email ID  :  ${fdata["emial"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -95,9 +94,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Office  :   ${fdata["office"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 35,
@@ -105,10 +104,10 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "Specialisation",
                 style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Color.fromARGB(255, 177, 174, 174)),
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -116,9 +115,9 @@ class FacultyOverview extends StatelessWidget {
               Text(
                 "${fdata["Specialisation"]}",
                 style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    color: Colors.white),
+                  fontSize: 15,
+                  fontFamily: GoogleFonts.lato().fontFamily,
+                ),
                 textAlign: TextAlign.center,
               ),
             ],

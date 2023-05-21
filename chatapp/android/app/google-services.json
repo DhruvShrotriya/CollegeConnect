@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "510739377137",
+    "project_id": "chata-b3914",
+    "storage_bucket": "chata-b3914.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510739377137:android:1ce94ce12401c4a684f250",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510739377137-petc1p1nj496at4lo1pq4mvfl8cllist.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFK8c6dDgvFL0wZEGiQYiRfub_PTEX2g0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510739377137-petc1p1nj496at4lo1pq4mvfl8cllist.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

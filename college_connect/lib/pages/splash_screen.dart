@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text(""),
         automaticallyImplyLeading: false,
       ),
       body: Center(

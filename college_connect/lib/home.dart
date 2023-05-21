@@ -8,6 +8,7 @@
 import 'package:college_connect/pages/faculty_details.dart';
 import 'package:college_connect/pages/modules/cab_chatpage.dart';
 import 'package:college_connect/pages/modules/feedback_front.dart';
+import 'package:college_connect/pages/modules/maps.dart';
 import 'package:college_connect/pyp_home.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -103,7 +104,7 @@ class GridScreen extends StatelessWidget {
               }
               if (index == 6) {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FacultyDetails()));
+                    MaterialPageRoute(builder: (context) => NiramaMaps()));
               }
               if (index == 7) {
                 Navigator.push(context,

@@ -6,6 +6,8 @@
         android:label="college_connect"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBygMkSE94db7ezakFmIKzWVeOyOmr0N0w"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
